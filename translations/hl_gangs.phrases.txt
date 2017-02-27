@@ -1,0 +1,386 @@
+// Exported from SourceMod Translator
+// Date: 2017-02-26 21:29:05 UTC
+// Language: English (en)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/275
+//
+"Phrases"
+{
+
+	"GangName"
+	{
+		"en"		"Please type desired gang name in chat!"
+	}
+
+	"GangAlert"
+	{
+		"#format"	"{1:s}"
+		"en"		"Gang member {1} has joined the game"
+	}
+
+	"DisabledPlugin"
+	{
+		"en"		"This plugin is disabled!"
+	}
+
+	"DisabledAcceptCommand"
+	{
+		"en"		"Accepting via command is disabled!"
+	}
+
+	"PlayerNotInGame"
+	{
+		"en"		"You must be in-game to use this command!"
+	}
+
+	"WrongTeam"
+	{
+		"en"		"You must be on the terrorist team to use this command!"
+	}
+
+	"AlreadyInGang"
+	{
+		"en"		"You are already in a gang!"
+	}
+
+	"NotInvited"
+	{
+		"en"		"You must be invited first!"
+	}
+
+	"GangIsFull"
+	{
+		"en"		"That Gang is full!"
+	}
+
+	"NameTooLong"
+	{
+		"en"		"The name you selected is too long!"
+	}
+
+	"NameAlreadyUsed"
+	{
+		"en"		"That name is already used, try again!"
+	}
+
+	"GangCreated"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1} has created {2}"
+	}
+
+	"GangNameChange"
+	{
+		"#format"	"{1:s},{2:s},{3:s}"
+		"en"		"{1} has changed the name of {2} to {3}"
+	}
+
+	"AcceptInstructions"
+	{
+		"#format"	"{1:s}"
+		"en"		"Type !accept to join {1}!"
+	}
+
+	"GangJoined"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1} has joined {2}!"
+	}
+
+	"HealthUpgrade"
+	{
+		"en"		"Health upgrade will be applied next round!"
+	}
+
+	"DamageUpgrade"
+	{
+		"en"		"Damage upgrade will be applied next round!"
+	}
+
+	"SpeedUpgrade"
+	{
+		"en"		"Speed upgrade will be applied next round!"
+	}
+
+	"SizeUpgrade"
+	{
+		"en"		"Size upgrade will be applied next round!"
+	}
+
+	"GravityUpgrade"
+	{
+		"en"		"Gravity upgrade will be applied next round!"
+	}
+
+	"GangMemberKick"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1} has been kicked from {2}"
+	}
+
+	"NoGangs"
+	{
+		"en"		"There are no gangs created!"
+	}
+
+	"GangDisbanded"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1} has disbanded {2}"
+	}
+
+	"LeftGang"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1} has left {2}"
+	}
+
+	"GamePerksDisabled"
+	{
+		"en"		"Your gang perks have been disabled!"
+	}
+
+	"GangsMenuTitle"
+	{
+		"en"		"Gangs Menu"
+	}
+
+	"CurrentGang"
+	{
+		"en"		"Current Gang:"
+	}
+
+	"Credits"
+	{
+		"en"		"Credits"
+	}
+
+	"CreateAGang"
+	{
+		"en"		"Create a Gang!"
+	}
+
+	"InviteToGang"
+	{
+		"en"		"Invite to Gang"
+	}
+
+	"GangMembers"
+	{
+		"en"		"Gang Members"
+	}
+
+	"GangPerks"
+	{
+		"en"		"Gang Perks"
+	}
+
+	"GangAdmin"
+	{
+		"en"		"Gang Admin"
+	}
+
+	"LeaveGang"
+	{
+		"en"		"Leave Your Gang?"
+	}
+
+	"TopGangs"
+	{
+		"en"		"Top Gangs"
+	}
+
+	"MemberList"
+	{
+		"en"		"Member List"
+	}
+
+	"MemberRank"
+	{
+		"en"		"Member"
+	}
+
+	"AdminRank"
+	{
+		"en"		"Admin"
+	}
+
+	"OwnerRank"
+	{
+		"en"		"Owner"
+	}
+
+	"Name"
+	{
+		"en"		"Name :"
+	}
+
+	"InvitedBy"
+	{
+		"en"		"Invited By :"
+	}
+
+	"Rank"
+	{
+		"en"		"Rank :"
+	}
+
+	"DateJoined"
+	{
+		"en"		"Date Joined :"
+	}
+
+	"InviteString"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1} has invited you to their gang!"
+	}
+
+	"WouldYouLikeToJoin"
+	{
+		"#format"	"{1:s}"
+		"en"		"Would you like to join \"{1}\""
+	}
+
+	"IWouldLikeTo"
+	{
+		"en"		"Yes, I'd like to join"
+	}
+
+	"IWouldNotLikeTo"
+	{
+		"en"		"No, I'd like to decline"
+	}
+
+	"GangInvitation"
+	{
+		"en"		"Gang Invitation"
+	}
+
+	"Health"
+	{
+		"en"		"Health"
+	}
+
+	"KnifeDamage"
+	{
+		"en"		"Knife Damage"
+	}
+
+	"Gravity"
+	{
+		"en"		"Gravity"
+	}
+
+	"Speed"
+	{
+		"en"		"Speed"
+	}
+
+	"GangSize"
+	{
+		"en"		"Gang Size"
+	}
+
+	"MenuGangName"
+	{
+		"en"		"Gang Name"
+	}
+
+	"GangRank"
+	{
+		"en"		"Gang Rank"
+	}
+
+	"DateCreated"
+	{
+		"en"		"Date Created"
+	}
+
+	"CreatedBy"
+	{
+		"en"		"Created By"
+	}
+
+	"CTKills"
+	{
+		"en"		"CT Kills"
+	}
+
+	"AreYouSure"
+	{
+		"en"		"Are you sure you want to leave?"
+	}
+
+	"OwnerWarning"
+	{
+		"en"		"As an owner, leaving will disband your gang!"
+	}
+
+	"YesLeave"
+	{
+		"en"		"Yes, I'd like to leave!"
+	}
+
+	"NoLeave"
+	{
+		"en"		"No, nevermind."
+	}
+
+	"KickAMember"
+	{
+		"en"		"Kick A Member"
+	}
+
+	"RenameGang"
+	{
+		"en"		"Rename Gang"
+	}
+
+	"Promote"
+	{
+		"en"		"Promote A Member"
+	}
+
+	"Disband"
+	{
+		"en"		"Disband Gang"
+	}
+
+	"GangMembersRanks"
+	{
+		"en"		"Gang Members Ranks"
+	}
+
+	"Simply"
+	{
+		"en"		"Simply click on the desired rank to set"
+	}
+
+	"DisbandGang"
+	{
+		"en"		"Disband Gang"
+	}
+
+	"DisbandConfirmation"
+	{
+		"en"		"Are you sure you want to disband your gang? \nThis change is permanent"
+	}
+
+	"YesDisband"
+	{
+		"en"		"Disband The Gang"
+	}
+
+	"NoDisband"
+	{
+		"en"		"Don't Disband The Gang"
+	}
+
+	"KickGangMembers"
+	{
+		"en"		"Kick Gang Members"
+	}
+
+}

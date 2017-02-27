@@ -1,0 +1,376 @@
+// Exported from SourceMod Translator
+// Date: 2017-02-26 21:29:05 UTC
+// Language: Polish (pl)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/275
+//
+"Phrases"
+{
+
+	"GangName"
+	{
+		"pl"		"Prosze wpisac nazwe gangu na czacie!"
+	}
+
+	"GangAlert"
+	{
+		"pl"		"Czlonek Gangu {1} dolaczyl do gry"
+	}
+
+	"DisabledPlugin"
+	{
+		"pl"		"Plugin jest wylaczony!"
+	}
+
+	"DisabledAcceptCommand"
+	{
+		"pl"		"Akceptacja komenda jest wylaczona!"
+	}
+
+	"PlayerNotInGame"
+	{
+		"pl"		"Musisz byc w grze, aby uzyc tej komendy!"
+	}
+
+	"WrongTeam"
+	{
+		"pl"		"Musisz byc terrorysta, aby uzyc tej komendy!"
+	}
+
+	"AlreadyInGang"
+	{
+		"pl"		"Jestes juz w gangu!"
+	}
+
+	"NotInvited"
+	{
+		"pl"		"Musisz byc zaproszony!"
+	}
+
+	"GangIsFull"
+	{
+		"pl"		"Ten gang jest pelny!"
+	}
+
+	"NameTooLong"
+	{
+		"pl"		"Nazwa gangu jest za dlugo!"
+	}
+
+	"NameAlreadyUsed"
+	{
+		"pl"		"Jest juz gang o podanej nazwie!"
+	}
+
+	"GangCreated"
+	{
+		"pl"		"{1} utworzyl {2}"
+	}
+
+	"GangNameChange"
+	{
+		"pl"		"{1} zmienil nazwe z {2} na {3}"
+	}
+
+	"AcceptInstructions"
+	{
+		"pl"		"Wpisz !accept, aby dolaczyc {1}!"
+	}
+
+	"GangJoined"
+	{
+		"pl"		"{1} dolaczyl do {2}!"
+	}
+
+	"HealthUpgrade"
+	{
+		"pl"		"Zdrowie zostalo ulepszony, zmiany pojawia sie w nastepnej rundzie!"
+	}
+
+	"DamageUpgrade"
+	{
+		"pl"		"Obrazenia zostaly ulepszone, zmiany pojawia sie w nastepnej rundzie!"
+	}
+
+	"SpeedUpgrade"
+	{
+		"pl"		"Szybkosc zostala ulepszona, zmiany pojawia sie w nastepnej rundzie!"
+	}
+
+	"SizeUpgrade"
+	{
+		"pl"		"Wielkosc zostala ulepszona, zmiany pojawia sie w nastepnej rundzie!"
+	}
+
+	"GravityUpgrade"
+	{
+		"pl"		"Grawitacja zostala ulepszona, zmiany pojawia sie w nastepnej rundzie!"
+	}
+
+	"GangMemberKick"
+	{
+		"pl"		"{1} zostal wyrzucony z {2}"
+	}
+
+	"NoGangs"
+	{
+		"pl"		"Nie ma gangów!"
+	}
+
+	"GangDisbanded"
+	{
+		"pl"		"{1} rozwiazal {2}"
+	}
+
+	"LeftGang"
+	{
+		"pl"		"{1} opuscil {2}"
+	}
+
+	"GamePerksDisabled"
+	{
+		"pl"		"Perki gangu zostaly wylaczone!"
+	}
+
+	"GangsMenuTitle"
+	{
+		"pl"		"Menu Gangu"
+	}
+
+	"CurrentGang"
+	{
+		"pl"		"Aktualny Gang:"
+	}
+
+	"Credits"
+	{
+		"pl"		"Kredytow"
+	}
+
+	"CreateAGang"
+	{
+		"pl"		"Zaloz Gang!"
+	}
+
+	"InviteToGang"
+	{
+		"pl"		"Zapros do Gangu"
+	}
+
+	"GangMembers"
+	{
+		"pl"		"Czlonkowie Gangu"
+	}
+
+	"GangPerks"
+	{
+		"pl"		"Ulepszenia Gangu"
+	}
+
+	"GangAdmin"
+	{
+		"pl"		"Admin Gangu"
+	}
+
+	"LeaveGang"
+	{
+		"pl"		"Opuscic Gang?"
+	}
+
+	"TopGangs"
+	{
+		"pl"		"Ranking Gangow"
+	}
+
+	"MemberList"
+	{
+		"pl"		"Lista Czlonkow"
+	}
+
+	"MemberRank"
+	{
+		"pl"		"Czlonek"
+	}
+
+	"AdminRank"
+	{
+		"pl"		"Admin"
+	}
+
+	"OwnerRank"
+	{
+		"pl"		"Wlasciciel"
+	}
+
+	"Name"
+	{
+		"pl"		"Nazwa :"
+	}
+
+	"InvitedBy"
+	{
+		"pl"		"Zaproszony przez:"
+	}
+
+	"Rank"
+	{
+		"pl"		"Ranking :"
+	}
+
+	"DateJoined"
+	{
+		"pl"		"Data Dolaczenia:"
+	}
+
+	"InviteString"
+	{
+		"pl"		" {1} zaprosil Cie do swojego gangu!"
+	}
+
+	"WouldYouLikeToJoin"
+	{
+		"pl"		"Chcialbys dolaczyc do \"{1}\""
+	}
+
+	"IWouldLikeTo"
+	{
+		"pl"		"Tak, chcialbym dolaczyc"
+	}
+
+	"IWouldNotLikeTo"
+	{
+		"pl"		"Nie, nie chcialbym dolaczyc"
+	}
+
+	"GangInvitation"
+	{
+		"pl"		"Zaproszenie Gangu"
+	}
+
+	"Health"
+	{
+		"pl"		"Zycie"
+	}
+
+	"KnifeDamage"
+	{
+		"pl"		"Obrazenia z Noza"
+	}
+
+	"Gravity"
+	{
+		"pl"		"Grawitacja"
+	}
+
+	"Speed"
+	{
+		"pl"		"Szybkosc"
+	}
+
+	"GangSize"
+	{
+		"pl"		"Wielkosc Gangu"
+	}
+
+	"MenuGangName"
+	{
+		"pl"		"Nazwa Gangu"
+	}
+
+	"GangRank"
+	{
+		"pl"		"Ranking Gangu"
+	}
+
+	"DateCreated"
+	{
+		"pl"		"Data Utworzenia"
+	}
+
+	"CreatedBy"
+	{
+		"pl"		"Utworzony przez"
+	}
+
+	"CTKills"
+	{
+		"pl"		"Zabojstwa CT"
+	}
+
+	"AreYouSure"
+	{
+		"pl"		"Jestes pewny, ze chcesz opuscic?"
+	}
+
+	"OwnerWarning"
+	{
+		"pl"		"Jako wlasciciel gangu, jezeli go opuscisz zostanie usuniety!"
+	}
+
+	"YesLeave"
+	{
+		"pl"		"Tak, chcialbym opuscic!"
+	}
+
+	"NoLeave"
+	{
+		"pl"		"Nie, nie ważne."
+	}
+
+	"KickAMember"
+	{
+		"pl"		"Wyrzuc Czlonka"
+	}
+
+	"RenameGang"
+	{
+		"pl"		"Zmien Nazwe Gangu"
+	}
+
+	"Promote"
+	{
+		"pl"		"Awansuj Czlonka"
+	}
+
+	"Disband"
+	{
+		"pl"		"Usun Gang"
+	}
+
+	"GangMembersRanks"
+	{
+		"pl"		"Ranking Czlonkow Gangu"
+	}
+
+	"Simply"
+	{
+		"pl"		"Wystarczy kliknac na wybrana range, aby ja ustawic"
+	}
+
+	"DisbandGang"
+	{
+		"pl"		"Usun Gang"
+	}
+
+	"DisbandConfirmation"
+	{
+		"pl"		"Jestes pewny, ze chcesz usunac swoj gang? \nTa zmiana jest nieodwracalna"
+	}
+
+	"YesDisband"
+	{
+		"pl"		"Usun Gang"
+	}
+
+	"NoDisband"
+	{
+		"pl"		"Nie usuwaj Gangu"
+	}
+
+	"KickGangMembers"
+	{
+		"pl"		"Wyrzuc Czlonka Gangu"
+	}
+
+}

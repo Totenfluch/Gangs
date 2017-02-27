@@ -1,0 +1,376 @@
+// Exported from SourceMod Translator
+// Date: 2017-02-26 21:29:05 UTC
+// Language: Portuguese (pt_p)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/275
+//
+"Phrases"
+{
+
+	"GangName"
+	{
+		"pt_p"		"Digite o nome desejado para a gangue no chat!"
+	}
+
+	"GangAlert"
+	{
+		"pt_p"		"Membro da gangue {1} se juntou à partida"
+	}
+
+	"DisabledPlugin"
+	{
+		"pt_p"		"Este plugin está desabilitado!"
+	}
+
+	"DisabledAcceptCommand"
+	{
+		"pt_p"		"Aceitar via comando está desabilitado!"
+	}
+
+	"PlayerNotInGame"
+	{
+		"pt_p"		"Você precisa estar dentro do jogo para usar este comando!"
+	}
+
+	"WrongTeam"
+	{
+		"pt_p"		"Você precisa estar no time terrorista para usar este comando!"
+	}
+
+	"AlreadyInGang"
+	{
+		"pt_p"		"Você já está em uma gangue!"
+	}
+
+	"NotInvited"
+	{
+		"pt_p"		"Você precisa ser convidado primeiro!"
+	}
+
+	"GangIsFull"
+	{
+		"pt_p"		"Esta gangue está cheia!"
+	}
+
+	"NameTooLong"
+	{
+		"pt_p"		"O nome selecionado é muito longo!"
+	}
+
+	"NameAlreadyUsed"
+	{
+		"pt_p"		"Este nome já está em uso, tente novamente!"
+	}
+
+	"GangCreated"
+	{
+		"pt_p"		"{1} criou a gangue {2}"
+	}
+
+	"GangNameChange"
+	{
+		"pt_p"		"{1} trocou o nome da gangue {2} para {3}"
+	}
+
+	"AcceptInstructions"
+	{
+		"pt_p"		"Digite !accept para entrar na gangue {1}!"
+	}
+
+	"GangJoined"
+	{
+		"pt_p"		"{1} entrou na gangue {2}!"
+	}
+
+	"HealthUpgrade"
+	{
+		"pt_p"		"Aprimoramento de Vida será aplicado na próxima rodada!"
+	}
+
+	"DamageUpgrade"
+	{
+		"pt_p"		"Aprimoramento de Dano será aplicado na próxima rodada!"
+	}
+
+	"SpeedUpgrade"
+	{
+		"pt_p"		"Aprimoramento de Velocidade será aplicado na próxima rodada!"
+	}
+
+	"SizeUpgrade"
+	{
+		"pt_p"		"Aprimoramento de Tamanho será aplicado na próxima rodada!"
+	}
+
+	"GravityUpgrade"
+	{
+		"pt_p"		"Aprimoramento de Gravidade será aplicado na próxima rodada!"
+	}
+
+	"GangMemberKick"
+	{
+		"pt_p"		"{1} foi expulso da gangue {2}"
+	}
+
+	"NoGangs"
+	{
+		"pt_p"		"Não há nenhuma gangue criada!"
+	}
+
+	"GangDisbanded"
+	{
+		"pt_p"		"{1} dispensou a gangue {2}"
+	}
+
+	"LeftGang"
+	{
+		"pt_p"		"{1} saiu da gangue {2}"
+	}
+
+	"GamePerksDisabled"
+	{
+		"pt_p"		"Os benefícios da sua gangue foram desabilitados!"
+	}
+
+	"GangsMenuTitle"
+	{
+		"pt_p"		"Menu de Gangues"
+	}
+
+	"CurrentGang"
+	{
+		"pt_p"		"Gangue atual:"
+	}
+
+	"Credits"
+	{
+		"pt_p"		"Créditos"
+	}
+
+	"CreateAGang"
+	{
+		"pt_p"		"Crie uma Gangue!"
+	}
+
+	"InviteToGang"
+	{
+		"pt_p"		"Convidar para a Gangue"
+	}
+
+	"GangMembers"
+	{
+		"pt_p"		"Membros da Gangue"
+	}
+
+	"GangPerks"
+	{
+		"pt_p"		"Aprimoramentos da Gangue"
+	}
+
+	"GangAdmin"
+	{
+		"pt_p"		"Gang Admin"
+	}
+
+	"LeaveGang"
+	{
+		"pt_p"		"Deixar sua Gangue?"
+	}
+
+	"TopGangs"
+	{
+		"pt_p"		"Top Gangues"
+	}
+
+	"MemberList"
+	{
+		"pt_p"		"Lista de Membros"
+	}
+
+	"MemberRank"
+	{
+		"pt_p"		"Membro"
+	}
+
+	"AdminRank"
+	{
+		"pt_p"		"Admin"
+	}
+
+	"OwnerRank"
+	{
+		"pt_p"		"Dono"
+	}
+
+	"Name"
+	{
+		"pt_p"		"Nome :"
+	}
+
+	"InvitedBy"
+	{
+		"pt_p"		"Convidado por :"
+	}
+
+	"Rank"
+	{
+		"pt_p"		"Rank :"
+	}
+
+	"DateJoined"
+	{
+		"pt_p"		"Data que se Juntou :"
+	}
+
+	"InviteString"
+	{
+		"pt_p"		"{1} convidou você para a gangue!"
+	}
+
+	"WouldYouLikeToJoin"
+	{
+		"pt_p"		"Você gostaria de se juntar à \"{1}\""
+	}
+
+	"IWouldLikeTo"
+	{
+		"pt_p"		"Sim, eu gostaria de entrar"
+	}
+
+	"IWouldNotLikeTo"
+	{
+		"pt_p"		"Não, eu gostaria de recusar"
+	}
+
+	"GangInvitation"
+	{
+		"pt_p"		"Convite de Gangue"
+	}
+
+	"Health"
+	{
+		"pt_p"		"Vida"
+	}
+
+	"KnifeDamage"
+	{
+		"pt_p"		"Dano de Faca"
+	}
+
+	"Gravity"
+	{
+		"pt_p"		"Gravidade"
+	}
+
+	"Speed"
+	{
+		"pt_p"		"Velocidade"
+	}
+
+	"GangSize"
+	{
+		"pt_p"		"Tamanho da Gangue"
+	}
+
+	"MenuGangName"
+	{
+		"pt_p"		"Nome da Gangue"
+	}
+
+	"GangRank"
+	{
+		"pt_p"		"Rank de Gangue"
+	}
+
+	"DateCreated"
+	{
+		"pt_p"		"Data de Criação"
+	}
+
+	"CreatedBy"
+	{
+		"pt_p"		"Criado por"
+	}
+
+	"CTKills"
+	{
+		"pt_p"		"CTs Mortos"
+	}
+
+	"AreYouSure"
+	{
+		"pt_p"		"Você tem certeza que deseja sair?"
+	}
+
+	"OwnerWarning"
+	{
+		"pt_p"		"Como dono, se sair da gangue irá dispensar a mesma!"
+	}
+
+	"YesLeave"
+	{
+		"pt_p"		"Sim, eu gostaria de sair!"
+	}
+
+	"NoLeave"
+	{
+		"pt_p"		"Não, deixa pra lá"
+	}
+
+	"KickAMember"
+	{
+		"pt_p"		"Expulsar um membro"
+	}
+
+	"RenameGang"
+	{
+		"pt_p"		"Renomear Gangue"
+	}
+
+	"Promote"
+	{
+		"pt_p"		"Promover um Membro"
+	}
+
+	"Disband"
+	{
+		"pt_p"		"Dispensar a gangue"
+	}
+
+	"GangMembersRanks"
+	{
+		"pt_p"		"Rank de Membros da Gangue"
+	}
+
+	"Simply"
+	{
+		"pt_p"		"Simplesmente clique no rank desejado para aprimorar"
+	}
+
+	"DisbandGang"
+	{
+		"pt_p"		"Dispensar Gangue"
+	}
+
+	"DisbandConfirmation"
+	{
+		"pt_p"		"Você tem certeza que deseja dispensar sua Gangue? \nEsta mudança será permanente"
+	}
+
+	"YesDisband"
+	{
+		"pt_p"		"Dispensar a gangue"
+	}
+
+	"NoDisband"
+	{
+		"pt_p"		"Não dispense a Gangue"
+	}
+
+	"KickGangMembers"
+	{
+		"pt_p"		"Expulsar Membros da Gangue"
+	}
+
+}

@@ -1,0 +1,381 @@
+// Exported from SourceMod Translator
+// Date: 2017-02-26 21:29:05 UTC
+// Language: German (de)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/275
+//
+"Phrases"
+{
+
+	"GangName"
+	{
+		"de"		"Bitte trage den gewünschten Namen im Chat ein!"
+	}
+
+	"GangAlert"
+	{
+		"de"		"Gang Mitglied {1} ist dem Spiel beigetreten"
+	}
+
+	"DisabledPlugin"
+	{
+		"de"		"Das Plugin ist deaktiviert!"
+	}
+
+	"DisabledAcceptCommand"
+	{
+		"de"		"Akzeptieren per Chatbefehl ist deaktiviert!"
+	}
+
+	"PlayerNotInGame"
+	{
+		"de"		"Du musst im Spiel sein um diesen Befehl zu verwenden"
+	}
+
+	"WrongTeam"
+	{
+		"de"		"Du musst ein Terrorist sein um diesen Befehl zu verwenden"
+	}
+
+	"AlreadyInGang"
+	{
+		"de"		"Du bist bereits in einer Gang!"
+	}
+
+	"NotInvited"
+	{
+		"de"		"Du musst zuerst eingeladen werden!"
+	}
+
+	"GangIsFull"
+	{
+		"de"		"Die Gang ist voll!"
+	}
+
+	"NameTooLong"
+	{
+		"de"		"Der ausgewählte Name ist zu lang!"
+	}
+
+	"NameAlreadyUsed"
+	{
+		"de"		"Der Name wird bereits verwendet, wähle einen Neuen!"
+	}
+
+	"GangCreated"
+	{
+		"de"		"{1} hat {2} erstellt"
+	}
+
+	"GangNameChange"
+	{
+		"de"		"{1} hat den Namen von {2} zu {3} geändert"
+	}
+
+	"AcceptInstructions"
+	{
+		"de"		"Schreibe !accept um {1} beizutreten!"
+	}
+
+	"GangJoined"
+	{
+		"de"		"{1} ist {2} beigetreten!"
+	}
+
+	"HealthUpgrade"
+	{
+		"de"		"Gesundheits Verbesserung ist nächste Runde aktiv!"
+	}
+
+	"DamageUpgrade"
+	{
+		"de"		"Schaden Verbesserung ist nächste Runde aktiv!"
+	}
+
+	"SpeedUpgrade"
+	{
+		"de"		"Geschwindigkeits Verbesserung ist nächste Runde aktiv!"
+	}
+
+	"SizeUpgrade"
+	{
+		"de"		"Größen Verbesserung ist nächste Runde aktiv"
+	}
+
+	"GravityUpgrade"
+	{
+		"de"		"Gravity Verbesserung ist nächste Runde aktiv"
+	}
+
+	"GangMemberKick"
+	{
+		"de"		"{1} wurde aus {2} geworfen"
+	}
+
+	"NoGangs"
+	{
+		"de"		"Es wurde bisher keine Gang gegründet!"
+	}
+
+	"GangDisbanded"
+	{
+		"de"		"{1} hat {2} aufgelöst"
+	}
+
+	"LeftGang"
+	{
+		"de"		"{1} hat {2} verlassen"
+	}
+
+	"GamePerksDisabled"
+	{
+		"de"		"Deine Gang Verbesserungen wurden deaktiviert!"
+	}
+
+	"GangsMenuTitle"
+	{
+		"de"		"Gangs Menü"
+	}
+
+	"CurrentGang"
+	{
+		"de"		"Derzeitige Gang:"
+	}
+
+	"CurrentGang"
+	{
+		"de"		"Derzeitige Gang"
+	}
+
+	"Credits"
+	{
+		"de"		"Credits"
+	}
+
+	"CreateAGang"
+	{
+		"de"		"Gründe eine Gang!"
+	}
+
+	"InviteToGang"
+	{
+		"de"		"In Gang einladen"
+	}
+
+	"GangMembers"
+	{
+		"de"		"Gang Mitglied"
+	}
+
+	"GangPerks"
+	{
+		"de"		"Gang Vorteil"
+	}
+
+	"GangAdmin"
+	{
+		"de"		"Gang Admin"
+	}
+
+	"LeaveGang"
+	{
+		"de"		"Deine Gang verlassen?"
+	}
+
+	"TopGangs"
+	{
+		"de"		"Top Gangs"
+	}
+
+	"MemberList"
+	{
+		"de"		"Mitglieder Liste"
+	}
+
+	"MemberRank"
+	{
+		"de"		"Mitglied"
+	}
+
+	"AdminRank"
+	{
+		"de"		"Admin"
+	}
+
+	"OwnerRank"
+	{
+		"de"		"Gründer"
+	}
+
+	"Name"
+	{
+		"de"		"Name :"
+	}
+
+	"InvitedBy"
+	{
+		"de"		"Eingeladen von:"
+	}
+
+	"Rank"
+	{
+		"de"		"Rang :"
+	}
+
+	"DateJoined"
+	{
+		"de"		"Beitrittsdatum:"
+	}
+
+	"InviteString"
+	{
+		"de"		"{1} hat dich in seine Gang eingeladen!"
+	}
+
+	"WouldYouLikeToJoin"
+	{
+		"de"		"Möchtest du \"{1}\" beitreten"
+	}
+
+	"IWouldLikeTo"
+	{
+		"de"		"Ja, ich möchte beitreten"
+	}
+
+	"IWouldNotLikeTo"
+	{
+		"de"		"Nein, ich lehne ab"
+	}
+
+	"GangInvitation"
+	{
+		"de"		"Gang Einladung"
+	}
+
+	"Health"
+	{
+		"de"		"Gesundheit"
+	}
+
+	"KnifeDamage"
+	{
+		"de"		"Messer Schaden"
+	}
+
+	"Gravity"
+	{
+		"de"		"Gravity"
+	}
+
+	"Speed"
+	{
+		"de"		"Geschwindigkeit"
+	}
+
+	"GangSize"
+	{
+		"de"		"Gang Größe"
+	}
+
+	"MenuGangName"
+	{
+		"de"		"Gang Name"
+	}
+
+	"GangRank"
+	{
+		"de"		"Gang Rang"
+	}
+
+	"DateCreated"
+	{
+		"de"		"Erstellungsdatum"
+	}
+
+	"CreatedBy"
+	{
+		"de"		"Erstellt von"
+	}
+
+	"CTKills"
+	{
+		"de"		"CT Kills"
+	}
+
+	"AreYouSure"
+	{
+		"de"		"Bist du sicher, dass du gehen möchtest?"
+	}
+
+	"OwnerWarning"
+	{
+		"de"		"Wenn du als Gründer die Gang verlässt, wird sie aufgelöst!"
+	}
+
+	"YesLeave"
+	{
+		"de"		"Ja, ich möchte gehen!"
+	}
+
+	"NoLeave"
+	{
+		"de"		"Nein, vergiss es"
+	}
+
+	"KickAMember"
+	{
+		"de"		"Kick ein Mitglied"
+	}
+
+	"RenameGang"
+	{
+		"de"		"Gang umbenennen"
+	}
+
+	"Promote"
+	{
+		"de"		"Ein Mitglied befördern"
+	}
+
+	"Disband"
+	{
+		"de"		"Gang auflösen"
+	}
+
+	"GangMembersRanks"
+	{
+		"de"		"Gang Mitglieder Ränge"
+	}
+
+	"Simply"
+	{
+		"de"		"Klicke einfach auf den gewünschten Rang"
+	}
+
+	"DisbandGang"
+	{
+		"de"		"Gang auflösen"
+	}
+
+	"DisbandConfirmation"
+	{
+		"de"		"Bist du Dir sicher, dass du die Gang auflösen möchtest? \nDies kann nicht rückgängig gemacht werden. "
+	}
+
+	"YesDisband"
+	{
+		"de"		"Auflösen der Gang"
+	}
+
+	"NoDisband"
+	{
+		"de"		"Die Gang nicht auflösen"
+	}
+
+	"KickGangMembers"
+	{
+		"de"		"Kick Gang Mitglied"
+	}
+
+}

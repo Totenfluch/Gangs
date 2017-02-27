@@ -1,0 +1,376 @@
+// Exported from SourceMod Translator
+// Date: 2017-02-26 21:29:05 UTC
+// Language: Russian (ru)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/275
+//
+"Phrases"
+{
+
+	"GangName"
+	{
+		"ru"		"Напишите желаемое название банды в чат!"
+	}
+
+	"GangAlert"
+	{
+		"ru"		"Участник банды {1} присоединился в игру"
+	}
+
+	"DisabledPlugin"
+	{
+		"ru"		"Плагин отключен!"
+	}
+
+	"DisabledAcceptCommand"
+	{
+		"ru"		"Принятие через команду отключено!"
+	}
+
+	"PlayerNotInGame"
+	{
+		"ru"		"Вы должны быть в игре, чтобы использовать команду!"
+	}
+
+	"WrongTeam"
+	{
+		"ru"		"Вы должны быть за террористов, чтобы использовать команду!"
+	}
+
+	"AlreadyInGang"
+	{
+		"ru"		"Вы уже состоите в банде!"
+	}
+
+	"NotInvited"
+	{
+		"ru"		"Вы должны быть приглашены сначала!"
+	}
+
+	"GangIsFull"
+	{
+		"ru"		"В этой банде нет мест!"
+	}
+
+	"NameTooLong"
+	{
+		"ru"		"Выбранное имя слишком длинное!"
+	}
+
+	"NameAlreadyUsed"
+	{
+		"ru"		"Название уже используется, выберите другое!"
+	}
+
+	"GangCreated"
+	{
+		"ru"		"{1} создал {2}"
+	}
+
+	"GangNameChange"
+	{
+		"ru"		"{1} изменил название {2} на {3}"
+	}
+
+	"AcceptInstructions"
+	{
+		"ru"		"Напишите !accept , чтобы вступить в {1}"
+	}
+
+	"GangJoined"
+	{
+		"ru"		"{1} присоединился {2}!"
+	}
+
+	"HealthUpgrade"
+	{
+		"ru"		"Уровень здоровья изменится в следующем раунде!"
+	}
+
+	"DamageUpgrade"
+	{
+		"ru"		"Уровень урона изменится в следующем раунде!"
+	}
+
+	"SpeedUpgrade"
+	{
+		"ru"		"Уровень скорости изменится в следующем раунде!"
+	}
+
+	"SizeUpgrade"
+	{
+		"ru"		"Уровень размера банды изменится в следующем раунде!"
+	}
+
+	"GravityUpgrade"
+	{
+		"ru"		"Уровень гравитации обновится в следующем раунде!"
+	}
+
+	"GangMemberKick"
+	{
+		"ru"		"{1} был выгнан из {2}"
+	}
+
+	"NoGangs"
+	{
+		"ru"		"Не создано ни одной банды!"
+	}
+
+	"GangDisbanded"
+	{
+		"ru"		"{1} распустил {2}"
+	}
+
+	"LeftGang"
+	{
+		"ru"		"{1} покинул {2}"
+	}
+
+	"GamePerksDisabled"
+	{
+		"ru"		"Привилегии вашей банды были отключены!"
+	}
+
+	"GangsMenuTitle"
+	{
+		"ru"		"Меню банды"
+	}
+
+	"CurrentGang"
+	{
+		"ru"		"Текущая банда:"
+	}
+
+	"Credits"
+	{
+		"ru"		"Кредиты"
+	}
+
+	"CreateAGang"
+	{
+		"ru"		"Создать банду!"
+	}
+
+	"InviteToGang"
+	{
+		"ru"		"Пригласить в банду"
+	}
+
+	"GangMembers"
+	{
+		"ru"		"Участники банды"
+	}
+
+	"GangPerks"
+	{
+		"ru"		"Привилегии банды"
+	}
+
+	"GangAdmin"
+	{
+		"ru"		"Управление бандой"
+	}
+
+	"LeaveGang"
+	{
+		"ru"		"Покинуть свою банду?"
+	}
+
+	"TopGangs"
+	{
+		"ru"		"Лучшие банды"
+	}
+
+	"MemberList"
+	{
+		"ru"		"Список участников"
+	}
+
+	"MemberRank"
+	{
+		"ru"		"Участник"
+	}
+
+	"AdminRank"
+	{
+		"ru"		"Админ"
+	}
+
+	"OwnerRank"
+	{
+		"ru"		"Основатель"
+	}
+
+	"Name"
+	{
+		"ru"		"Название :"
+	}
+
+	"InvitedBy"
+	{
+		"ru"		"Приглашён :"
+	}
+
+	"Rank"
+	{
+		"ru"		"Ранг :"
+	}
+
+	"DateJoined"
+	{
+		"ru"		"Дата вступления:"
+	}
+
+	"InviteString"
+	{
+		"ru"		"{1} пригласил вас в свою банду!"
+	}
+
+	"WouldYouLikeToJoin"
+	{
+		"ru"		"Хочешь вступить в \"{1}\""
+	}
+
+	"IWouldLikeTo"
+	{
+		"ru"		"Да, Я хочу присоединиться"
+	}
+
+	"IWouldNotLikeTo"
+	{
+		"ru"		"Нет, Я хочу отказаться"
+	}
+
+	"GangInvitation"
+	{
+		"ru"		"Приглашение в банду"
+	}
+
+	"Health"
+	{
+		"ru"		"Здоровье"
+	}
+
+	"KnifeDamage"
+	{
+		"ru"		"Урон с ножа"
+	}
+
+	"Gravity"
+	{
+		"ru"		"Гравитация"
+	}
+
+	"Speed"
+	{
+		"ru"		"Скорость"
+	}
+
+	"GangSize"
+	{
+		"ru"		"Размер банды"
+	}
+
+	"MenuGangName"
+	{
+		"ru"		"Название банды"
+	}
+
+	"GangRank"
+	{
+		"ru"		"Ранг банды"
+	}
+
+	"DateCreated"
+	{
+		"ru"		"Дата создания"
+	}
+
+	"CreatedBy"
+	{
+		"ru"		"Создана"
+	}
+
+	"CTKills"
+	{
+		"ru"		"Убийства КТ"
+	}
+
+	"AreYouSure"
+	{
+		"ru"		"Вы уверены, что хотите покинуть?"
+	}
+
+	"OwnerWarning"
+	{
+		"ru"		"Как основатель, покинув банду, вы распустите её!"
+	}
+
+	"YesLeave"
+	{
+		"ru"		"Да, Я хочу покинуть!"
+	}
+
+	"NoLeave"
+	{
+		"ru"		"Не, неважно."
+	}
+
+	"KickAMember"
+	{
+		"ru"		"Выгнать участника"
+	}
+
+	"RenameGang"
+	{
+		"ru"		"Переименовать банду"
+	}
+
+	"Promote"
+	{
+		"ru"		"Повысить участника"
+	}
+
+	"Disband"
+	{
+		"ru"		"Распустить банду"
+	}
+
+	"GangMembersRanks"
+	{
+		"ru"		"Ранги участников банды"
+	}
+
+	"Simply"
+	{
+		"ru"		"Кликните на желаемый ранг, чтобы установить"
+	}
+
+	"DisbandGang"
+	{
+		"ru"		"Распустить банду"
+	}
+
+	"DisbandConfirmation"
+	{
+		"ru"		"Вы уверены в расформирование своей банды, \nОбратно восстановить невозможно"
+	}
+
+	"YesDisband"
+	{
+		"ru"		"Распустить банду"
+	}
+
+	"NoDisband"
+	{
+		"ru"		"Не распускайте банду"
+	}
+
+	"KickGangMembers"
+	{
+		"ru"		"Выгнать участников банды"
+	}
+
+}
