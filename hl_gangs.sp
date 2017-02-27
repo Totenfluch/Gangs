@@ -47,7 +47,6 @@ int ga_iTimer[MAXPLAYERS + 1] =  { 0, ... };
 int ga_iCTKills[MAXPLAYERS + 1] =  { 0, ... };
 int ga_iTempInt[MAXPLAYERS + 1] =  { 0, ... };
 int ga_iTempInt2[MAXPLAYERS + 1] =  { 0, ... };
-int ga_iSize[MAXPLAYERS + 1] =  { 0, ... };
 int g_iGangAmmount = 0;
 
 
@@ -609,7 +608,7 @@ void OpenGangsMenu(int client) {
 	menu.AddItem("create", sDisplayBuffer, (ga_bHasGang[client] || GetClientCredits(client) < gcv_iCreateGangPrice.IntValue) ? ITEMDRAW_DISABLED:ITEMDRAW_DEFAULT);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "InviteToGang", client);
-	menu.AddItem("invite", sDisplayBuffer, (ga_bHasGang[client] && ga_iRank[client] > Rank_Normal && ga_iGangSize[client] < gcv_iMaxGangSize.IntValue + ga_iSize[client]) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
+	menu.AddItem("invite", sDisplayBuffer, (ga_bHasGang[client] && ga_iRank[client] > Rank_Normal && ga_iGangSize[client] < gcv_iMaxGangSize.IntValue) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "GangMembers", client);
 	menu.AddItem("members", sDisplayBuffer, (ga_bHasGang[client]) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
@@ -793,8 +792,6 @@ public void SQL_Callback_CheckName(Database db, DBResultSet results, const char[
 				ga_sInvitedBy[client] = "N/A";
 				ga_iRank[client] = Rank_Owner;
 				ga_iGangSize[client] = 1;
-				
-				ga_iSize[client] = 0;
 				
 				UpdateSQL(client);
 				
@@ -1042,7 +1039,7 @@ public int InvitationMenu_Callback(Menu menu, MenuAction action, int param1, int
 			
 			ga_iInvitation[GetClientOfUserId(iUserID)] = GetClientUserId(param1);
 			
-			if (ga_iGangSize[param1] >= gcv_iMaxGangSize.IntValue + ga_iSize[param1])
+			if (ga_iGangSize[param1] >= gcv_iMaxGangSize.IntValue)
 			{
 				PrintToChat(param1, "%s %t", TAG, "GangIsFull");
 			}
@@ -1119,8 +1116,6 @@ public int SentInviteMenu_Callback(Menu menu, MenuAction action, int param1, int
 				ga_bHasGang[param1] = true;
 				ga_bSetName[param1] = false;
 				
-				
-				ga_iSize[param1] = ga_iSize[sender];
 				ga_iCTKills[param1] = ga_iCTKills[sender];
 				
 				char sName[MAX_NAME_LENGTH];
@@ -1843,10 +1838,10 @@ public void SQLCALLBACK_GROUPS(Database db, DBResultSet results, const char[] er
 	
 	char sQuery[300];
 	if (!ga_bIsGangInDatabase[client]) {
-		Format(sQuery, sizeof(sQuery), "INSERT INTO hl_gangs_groups (gang, health, damage, gravity, speed, size) VALUES(\"%s\", %i, %i, %i, %i, %i)", ga_sGangName[client], 0, 0, 0, 0, ga_iSize[client]);
+		Format(sQuery, sizeof(sQuery), "INSERT INTO hl_gangs_groups (gang, health, damage, gravity, speed, size) VALUES(\"%s\", %i, %i, %i, %i, %i)", ga_sGangName[client], 0, 0, 0, 0, 0);
 	}
 	else {
-		Format(sQuery, sizeof(sQuery), "UPDATE hl_gangs_groups SET health=%i,damage=%i,gravity=%i,speed=%i,size=%i WHERE gang=\"%s\"", 0, 0, 0, 0, ga_iSize[client], ga_sGangName[client]);
+		Format(sQuery, sizeof(sQuery), "UPDATE hl_gangs_groups SET health=%i,damage=%i,gravity=%i,speed=%i,size=%i WHERE gang=\"%s\"", 0, 0, 0, 0, 0, ga_sGangName[client]);
 		
 	}
 	
@@ -1982,13 +1977,11 @@ void PrintToGang(int client, bool bPrintToClient = false, const char[] sMsg, any
 	}
 }
 
-
 void ResetVariables(int client) {
 	ga_iRank[client] = Rank_Invalid;
 	ga_iGangSize[client] = -1;
 	ga_iInvitation[client] = -1;
 	ga_iDateJoined[client] = -1;
-	ga_iSize[client] = 0;
 	ga_iTimer[client] = 0;
 	ga_iCTKills[client] = 0;
 	ga_iTempInt[client] = 0;
@@ -2003,17 +1996,6 @@ void ResetVariables(int client) {
 	ga_fChangedGravity[client] = 0.0;
 	ga_sSteamID[client] = "";
 	ga_bLoaded[client] = false;
-}
-
-int GetPlayerAliveCount(int team) {
-	int iAmmount = 0;
-	for (int i = 1; i <= MaxClients; i++) {
-		if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == team)
-		{
-			iAmmount++;
-		}
-	}
-	return iAmmount;
 }
 
 bool IsValidClient(int client, bool bAllowBots = false, bool bAllowDead = true) {
