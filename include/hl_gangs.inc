@@ -34,7 +34,7 @@ native void Gangs_MessageToAll(int client, const char[] format, any ...);
  * @param	client			client index
  * @return  int				gang size
  */
-native int Gangs_GetGangSize(int client)
+native int Gangs_GetGangSize(int client);
 
 /**
  * Returns if a client is a member of a gang
@@ -68,6 +68,14 @@ native void Gangs_GetGangName(int client, char[] buffer, int maxlength);
  */
 native float Gangs_GetDamageModifier(client);
 
+	/*
+		@Param1 -> char Featurename[64],
+		@Param2 -> int maxLevel
+		@Param3 -> int cost
+		@Param4 -> Float increase
+		@Param5- > bool exponential -> true| linear -> false
+	*/
+native void Gangs_RegisterFeature(char featureName[64], int maxLevel, int cost, float increase, bool exponential);
 
 
 public SharedPlugin hl_gangs_include_shared =
