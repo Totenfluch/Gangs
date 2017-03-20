@@ -1,14 +1,14 @@
 #if defined hl_gangs_include
-  #endinput
+#endinput
 #endif
 #define hl_gangs_include
- 
+
 /* Gang Ranks */
 enum GangRank
 {
-	Rank_Invalid = -1,
-	Rank_Normal,
-	Rank_Admin,
+	Rank_Invalid = -1, 
+	Rank_Normal, 
+	Rank_Admin, 
 	Rank_Owner
 }
 
@@ -18,7 +18,7 @@ enum GangRank
  * @param	client			client index
  * @return  int				gang size
  */
-native void Gangs_Message(int client, const char[] format, any ...);
+native void Gangs_Message(int client, const char[] format, any...);
 
 /**
  * Outputs a formatted message to all clients
@@ -26,7 +26,7 @@ native void Gangs_Message(int client, const char[] format, any ...);
  * @param	client			client index
  * @return  int				gang size
  */
-native void Gangs_MessageToAll(int client, const char[] format, any ...);
+native void Gangs_MessageToAll(int client, const char[] format, any...);
 
 /**
  * Returns the size of a client's gang
@@ -68,7 +68,7 @@ native void Gangs_GetGangName(int client, char[] buffer, int maxlength);
  */
 native float Gangs_GetDamageModifier(client);
 
-	/*
+/*
 		@Param1 -> char Featurename[64],
 		@Param2 -> int maxLevel
 		@Param3 -> int cost
@@ -78,20 +78,20 @@ native float Gangs_GetDamageModifier(client);
 native void Gangs_RegisterFeature(char featureName[64], int maxLevel, int cost, float increase, bool exponential);
 
 
-public SharedPlugin hl_gangs_include_shared =
+public SharedPlugin hl_gangs_include_shared = 
 {
-	name = "[CS:GO] Jailbreak Gangs",
-	file = "hl_gangs.smx",
-#if defined REQUIRE_PLUGIN
+	name = "[CS:GO] Jailbreak Gangs", 
+	file = "hl_gangs.smx", 
+	#if defined REQUIRE_PLUGIN
 	required = 1
-#else
+	#else
 	required = 0
-#endif
+	#endif
 };
 
 #if !defined REQUIRE_PLUGIN
 public hl_gangs_include_shared()
-{	
+{
 	MarkNativeAsOptional("Gangs_GetDamageModifier");
 	MarkNativeAsOptional("Gangs_GetGangName");
 	MarkNativeAsOptional("Gangs_GetGangRank");

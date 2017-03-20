@@ -522,11 +522,11 @@ public void SQLCallback_LoadPlayerFeatures(Database db, DBResultSet results, con
 	} else {
 		g_iOwnedFeatureCount[client] = 0;
 		while (SQL_FetchRow(results)) {
-		strcopy(g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfGang], 128, ga_sGangName[client]);
-		g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfLevel] = SQL_FetchInt(results, 0);
-		SQL_FetchString(results, 1, g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]++][ogfFeatureName], 64);
-		PrintToServer(">>>> %s", g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client] - 1][ogfFeatureName]);
-	}
+			strcopy(g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfGang], 128, ga_sGangName[client]);
+			g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfLevel] = SQL_FetchInt(results, 0);
+			SQL_FetchString(results, 1, g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]++][ogfFeatureName], 64);
+			PrintToServer(">>>> %s", g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client] - 1][ogfFeatureName]);
+		}
 		// TODO -> gangId
 	}
 }
@@ -666,7 +666,7 @@ void OpenGangsMenu(int client) {
 	menu.AddItem("members", sDisplayBuffer, (ga_bHasGang[client]) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "GangPerks", client);
-	menu.AddItem("perks", sDisplayBuffer, (ga_bHasGang[client])?ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
+	menu.AddItem("perks", sDisplayBuffer, (ga_bHasGang[client]) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "GangAdmin", client);
 	menu.AddItem("admin", sDisplayBuffer, (ga_iRank[client] >= Rank_Admin) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
@@ -1225,11 +1225,11 @@ public void SQLLookupQueryCallback(Handle owner, Handle hndl, const char[] error
 			Format(item1, sizeof(item1), "Upgrade %s from %i to %i", featureName, level, level + 1);
 			AddMenuItem(m, item1, item1, ITEMDRAW_DISABLED);
 			overtakeLevel[client] = level + 1;
-		
+			
 			char item2[64];
 			float amount = g_eLoadedGangFeatures[id][gfExponential] ? g_eLoadedGangFeatures[id][gfCost] * g_eLoadedGangFeatures[id][gfIncrease] * g_eOwnedGangFeatures[client][oid][ogfLevel]:g_eLoadedGangFeatures[id][gfCost] * (g_eLoadedGangFeatures[id][gfIncrease] + g_eOwnedGangFeatures[client][oid][ogfLevel]);
-			Format(item2, sizeof(item2), "Buy for %.2f %s", amount, tConomy_getCurrency(client) >= amount?"":"(No Money)");
-			AddMenuItem(m, "upgrade", item2, tConomy_getCurrency(client) >= amount?ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
+			Format(item2, sizeof(item2), "Buy for %.2f %s", amount, tConomy_getCurrency(client) >= amount ? "":"(No Money)");
+			AddMenuItem(m, "upgrade", item2, tConomy_getCurrency(client) >= amount ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 		}
 		hasFeature = true;
 	}
@@ -1297,7 +1297,7 @@ public void addFeature(int client, int feature, bool first) {
 	strcopy(g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfGang], 128, ga_sGangName[client]);
 	g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfLevel] = 1;
 	// Todo GangId
-	strcopy(g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]][ogfFeatureName], 128, g_eLoadedGangFeatures[feature][gfName]);
+	strcopy(g_eOwnedGangFeatures[client][g_iOwnedFeatureCount[client]++][ogfFeatureName], 128, g_eLoadedGangFeatures[feature][gfName]);
 	
 	char syncQuery[512];
 	Format(syncQuery, sizeof(syncQuery), "INSERT IGNORE INTO `hl_gangs_features` (`Id`, `gang`, `feature`, `level`) VALUES (NULL, '%s', '%s', '1');", ga_sGangName[client], g_eLoadedGangFeatures[feature][gfName]);
