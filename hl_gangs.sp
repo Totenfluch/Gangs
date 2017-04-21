@@ -116,6 +116,13 @@ public APLRes AskPluginLoad2(Handle hMyself, bool bLate, char[] sError, int err_
 	*/
 	CreateNative("Gangs_RegisterFeature", Native_RegisterFeature);
 	
+	/*
+		@Param1 -> int client
+		@Param2 -> char Featurename[64]
+		@return -> -1: Feature does not exist | 0:Not owned | else: level
+	*/
+	CreateNative("Gangs_getFeatureLevel", Native_getFeatureLevel);
+	
 	RegPluginLibrary("hl_gangs_library");
 	
 	g_bLateLoad = bLate;
@@ -209,6 +216,21 @@ public int Native_RegisterFeature(Handle plugin, int numParams) {
 	return g_iLoadedGangFeatures >= MAX_GANG_FEATURES;
 }
 
+public int Native_getFeatureLevel(Handle plugin, int numParams) {
+	int client = GetNativeCell(1);
+	char featureName[64];
+	GetNativeString(2, featureName, sizeof(featureName));
+	
+	int id = findLoadedIdByName(featureName);
+	if(id == -1)
+		return -1;
+	int oid = loadedFeatureIdToOwnedId(id, client);
+	if(oid == -1)
+		return 0;
+	
+	return g_eOwnedGangFeatures[client][oid][ogfLevel];
+}
+
 public bool featureExists(char name[64]) {
 	for (int i = 0; i < g_iLoadedGangFeatures; i++)
 	if (StrEqual(name, g_eLoadedGangFeatures[i][gfName]))
@@ -217,9 +239,9 @@ public bool featureExists(char name[64]) {
 }
 
 public Plugin myinfo =  {
-	name = "[CS:GO/CS:S] Jailbreak Gangs", 
-	author = "Headline", 
-	description = "An SQL-based gang plugin", 
+	name = "[CS:GO/CS:S] Roleplay Gangs", 
+	author = "Headline [Roleplay edit by Totenfluch]", 
+	description = "An MySQL-based gang plugin", 
 	version = PLUGIN_VERSION, 
 	url = "http://michaelwflaherty.com"
 };

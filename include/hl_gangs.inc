@@ -77,6 +77,12 @@ native float Gangs_GetDamageModifier(client);
 	*/
 native void Gangs_RegisterFeature(char featureName[64], int maxLevel, int cost, float increase, bool exponential);
 
+/*
+	@Param1 -> int client
+	@Param2 -> char Featurename[64]
+	@return -> -1: Feature does not exist | 0:Not owned | else: level
+*/
+Native int Gangs_getFeatureLevel(int client, char featureName[64]);
 
 public SharedPlugin hl_gangs_include_shared = 
 {
