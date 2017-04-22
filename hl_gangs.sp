@@ -21,6 +21,7 @@
 #include <hl_gangs>
 #include <tConomy>
 #include <rpg_jobs_core>
+#include <cstrike>
 
 
 #define PLUGIN_VERSION "1.0.9"
@@ -475,6 +476,7 @@ public void SQLCallback_CheckSQL_Player(Database db, DBResultSet results, const 
 			char sQuery_2[300];
 			Format(sQuery_2, sizeof(sQuery_2), "SELECT * FROM hl_gangs_groups WHERE gang=\"%s\"", ga_sGangName[client]);
 			g_hDatabase.Query(SQLCallback_CheckSQL_Groups, sQuery_2, GetClientUserId(client));
+			CS_SetClientClanTag(client, ga_sGangName[client]);
 		} else {
 			if (results.RowCount > 1) {
 				LogError("Player %L has multiple entries under their ID. Running script to clean up duplicates and keep original entry (oldest)", client);
@@ -1166,7 +1168,8 @@ public int SentInviteMenu_Callback(Menu menu, MenuAction action, int param1, int
 				
 				char name[MAX_NAME_LENGTH];
 				GetClientName(param1, name, sizeof(name));
-				
+				// TODO : ADD Perks???
+				LoadSteamID(param1);
 				PrintToChatAll("%s %T", TAG, "GangJoined", LANG_SERVER, name, ga_sGangName[param1]);
 			} else if (StrEqual(sInfo, "no")) {
 				// Do Nothing
