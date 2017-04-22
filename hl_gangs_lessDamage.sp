@@ -55,7 +55,11 @@ public void OnClientDisconnect(int client) {
 }
 
 public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &bweapon, float damageForce[3], const float damagePosition[3]) {
-	
+	if(!isValidClient(victim))
+		return Plugin_Continue;
+	if(!isValidClient(attacker))
+		return Plugin_Continue;
+		
 	if (!Gangs_HasGang(victim))
 		return Plugin_Continue;
 	if (Gangs_getFeatureLevel(victim, reduceDmgName) < 1)
@@ -80,7 +84,7 @@ public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &dam
 			
 			char tempGangName[64];
 			Gangs_GetGangName(i, tempGangName, sizeof(tempGangName));
-			if(!StrEqual(gangNameOfVictim, tempGangName, true))
+			if (!StrEqual(gangNameOfVictim, tempGangName, true))
 				continue;
 			if (GetVectorDistance(pos, tempPos, false) > g_fDistance)
 				continue;

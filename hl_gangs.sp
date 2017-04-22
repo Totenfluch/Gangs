@@ -617,6 +617,7 @@ public Action Command_Accept(int client, int args) {
 	ga_iGangSize[client] = 1;
 	ga_iRank[client] = Rank_Normal;
 	UpdateSQL(client);
+	
 	return Plugin_Handled;
 }
 
@@ -1235,6 +1236,8 @@ public int perksMenuHandler(Menu menu, MenuAction action, int client, int item) 
 int overtakeLevel[MAXPLAYERS + 1];
 public void SQLLookupQueryCallback(Handle owner, Handle hndl, const char[] error, any data) {
 	int client = GetClientOfUserId(data);
+	if(!IsValidClient(client))
+		return;
 	Menu m = CreateMenu(perksMenuCallbackHandler);
 	char title[64];
 	bool hasFeature = false;
