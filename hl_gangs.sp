@@ -1236,7 +1236,7 @@ public int perksMenuHandler(Menu menu, MenuAction action, int client, int item) 
 int overtakeLevel[MAXPLAYERS + 1];
 public void SQLLookupQueryCallback(Handle owner, Handle hndl, const char[] error, any data) {
 	int client = GetClientOfUserId(data);
-	if(!IsValidClient(client))
+	if (!IsValidClient(client))
 		return;
 	Menu m = CreateMenu(perksMenuCallbackHandler);
 	char title[64];
@@ -2196,11 +2196,8 @@ void ResetVariables(int client) {
 	ga_bLoaded[client] = false;
 }
 
-bool IsValidClient(int client, bool bAllowBots = false, bool bAllowDead = true) {
-	if (!(1 <= client <= MaxClients) || !IsClientInGame(client) || (IsFakeClient(client) && !bAllowBots) || IsClientSourceTV(client) || IsClientReplay(client) || (!bAllowDead && !IsPlayerAlive(client))) {
-		return false;
-	}
-	return true;
+stock bool IsValidClient(int client) {
+	return (1 <= client <= MaxClients && IsClientInGame(client));
 }
 
 public int getFeatureLevel(char featureName[64], int client) {

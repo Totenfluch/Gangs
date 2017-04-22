@@ -55,11 +55,11 @@ public void OnClientDisconnect(int client) {
 }
 
 public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &bweapon, float damageForce[3], const float damagePosition[3]) {
-	if(!isValidClient(victim))
+	if (!isValidClient(victim))
 		return Plugin_Continue;
-	if(!isValidClient(attacker))
+	if (!isValidClient(attacker))
 		return Plugin_Continue;
-		
+	
 	if (!Gangs_HasGang(victim))
 		return Plugin_Continue;
 	if (Gangs_getFeatureLevel(victim, reduceDmgName) < 1)
