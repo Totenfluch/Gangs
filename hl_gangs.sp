@@ -129,6 +129,10 @@ public APLRes AskPluginLoad2(Handle hMyself, bool bLate, char[] sError, int err_
 	return APLRes_Success;
 }
 
+public void OnMapStart() {
+	registerFeature("Members", 10, 300, 1.5, false);
+}
+
 public int Native_MessageToAll(Handle plugin, int numParams) {
 	char phrase[1024];
 	int bytes;
@@ -203,6 +207,12 @@ public int Native_RegisterFeature(Handle plugin, int numParams) {
 	float increase = GetNativeCell(4);
 	bool exponential = GetNativeCell(5) == 1;
 	
+	registerFeature(featureName, maxLevel, cost, increase, exponential);
+	
+	return g_iLoadedGangFeatures >= MAX_GANG_FEATURES;
+}
+
+public void registerFeature(char featureName[64], int maxLevel, int cost, float increase, bool exponential) {
 	if (!featureExists(featureName)) {
 		strcopy(g_eLoadedGangFeatures[g_iLoadedGangFeatures][gfName], 64, featureName);
 		g_eLoadedGangFeatures[g_iLoadedGangFeatures][gfFeatureId] = g_iLoadedGangFeatures;
@@ -212,8 +222,6 @@ public int Native_RegisterFeature(Handle plugin, int numParams) {
 		g_eLoadedGangFeatures[g_iLoadedGangFeatures][gfExponential] = exponential;
 		g_iLoadedGangFeatures++;
 	}
-	
-	return g_iLoadedGangFeatures >= MAX_GANG_FEATURES;
 }
 
 public int Native_getFeatureLevel(Handle plugin, int numParams) {
@@ -222,10 +230,10 @@ public int Native_getFeatureLevel(Handle plugin, int numParams) {
 	GetNativeString(2, featureName, sizeof(featureName));
 	
 	int id = findLoadedIdByName(featureName);
-	if(id == -1)
+	if (id == -1)
 		return -1;
 	int oid = loadedFeatureIdToOwnedId(id, client);
-	if(oid == -1)
+	if (oid == -1)
 		return 0;
 	
 	return g_eOwnedGangFeatures[client][oid][ogfLevel];
@@ -590,7 +598,7 @@ public Action Command_Accept(int client, int args) {
 		return Plugin_Handled;
 	}
 	
-	if (ga_iGangSize[GetClientOfUserId(ga_iInvitation[client])] <= gcv_iMaxGangSize.IntValue) {
+	if (ga_iGangSize[GetClientOfUserId(ga_iInvitation[client])] <= gcv_iMaxGangSize.IntValue + getFeatureLevel("Members", client)) {
 		ReplyToCommand(client, "%s %t", TAG, "GangIsFull");
 		return Plugin_Handled;
 	}
@@ -665,7 +673,7 @@ void OpenGangsMenu(int client) {
 			, "Credits", client
 			, GetClientCredits(client)
 			, "CurrentGang", client
-			, ga_sGangName[client], ga_iGangSize[client], gcv_iMaxGangSize.IntValue, 0);
+			, ga_sGangName[client], ga_iGangSize[client], gcv_iMaxGangSize.IntValue + getFeatureLevel("Members", client), 0);
 		SetMenuTitle(menu, sString);
 	}
 	else {
@@ -682,7 +690,7 @@ void OpenGangsMenu(int client) {
 	menu.AddItem("create", sDisplayBuffer, (ga_bHasGang[client] || GetClientCredits(client) < gcv_iCreateGangPrice.IntValue) ? ITEMDRAW_DISABLED:ITEMDRAW_DEFAULT);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "InviteToGang", client);
-	menu.AddItem("invite", sDisplayBuffer, (ga_bHasGang[client] && ga_iRank[client] > Rank_Normal && ga_iGangSize[client] < gcv_iMaxGangSize.IntValue) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
+	menu.AddItem("invite", sDisplayBuffer, (ga_bHasGang[client] && ga_iRank[client] > Rank_Normal && ga_iGangSize[client] < gcv_iMaxGangSize.IntValue + getFeatureLevel("Members", client)) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 	
 	Format(sDisplayBuffer, sizeof(sDisplayBuffer), "%T", "GangMembers", client);
 	menu.AddItem("members", sDisplayBuffer, (ga_bHasGang[client]) ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
@@ -1074,7 +1082,7 @@ public int InvitationMenu_Callback(Menu menu, MenuAction action, int param1, int
 			
 			ga_iInvitation[GetClientOfUserId(iUserID)] = GetClientUserId(param1);
 			
-			if (ga_iGangSize[param1] >= gcv_iMaxGangSize.IntValue) {
+			if (ga_iGangSize[param1] >= gcv_iMaxGangSize.IntValue + getFeatureLevel("Members", param1)) {
 				PrintToChat(param1, "%s %t", TAG, "GangIsFull");
 			}
 			
@@ -1250,7 +1258,7 @@ public void SQLLookupQueryCallback(Handle owner, Handle hndl, const char[] error
 			
 			char item2[64];
 			float amount = g_eLoadedGangFeatures[id][gfExponential] ? g_eLoadedGangFeatures[id][gfCost] * g_eLoadedGangFeatures[id][gfIncrease] * g_eOwnedGangFeatures[client][oid][ogfLevel]:g_eLoadedGangFeatures[id][gfCost] * (g_eLoadedGangFeatures[id][gfIncrease] + g_eOwnedGangFeatures[client][oid][ogfLevel]);
-			Format(item2, sizeof(item2), "Buy for %.2f %s", amount, tConomy_getCurrency(client) >= amount ? "":"(No Money)");
+			Format(item2, sizeof(item2), "Buy for %.2f %s", amount, tConomy_getCurrency(client) >= amount ? "":"(No Chips)");
 			AddMenuItem(m, "upgrade", item2, tConomy_getCurrency(client) >= amount ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 		}
 		hasFeature = true;
@@ -1259,7 +1267,7 @@ public void SQLLookupQueryCallback(Handle owner, Handle hndl, const char[] error
 		AddMenuItem(m, "notowned", "Your Gang doesn't own this feature");
 		char item1[64];
 		Format(item1, sizeof(item1), "Buy %s for %i (1)", overTakeFeature[client], g_eLoadedGangFeatures[theId[client]][gfCost]);
-		AddMenuItem(m, "new", item1);
+		AddMenuItem(m, "new", item1, tConomy_getCurrency(client) >= g_eLoadedGangFeatures[theId[client]][gfCost] ? ITEMDRAW_DEFAULT:ITEMDRAW_DISABLED);
 		overtakeLevel[client] = 1;
 	}
 	DisplayMenu(m, client, 60);
@@ -1274,15 +1282,20 @@ public int perksMenuCallbackHandler(Menu menu, MenuAction action, int client, in
 			int style;
 			GetMenuItem(menu, item, sInfo, sizeof(sInfo), style, display, sizeof(display));
 			int oid = loadedFeatureIdToOwnedId(theId[client], client);
-			float amount = g_eLoadedGangFeatures[theId[client]][gfExponential] ? g_eLoadedGangFeatures[theId[client]][gfCost] * g_eLoadedGangFeatures[theId[client]][gfIncrease] * g_eOwnedGangFeatures[client][oid][ogfLevel]:g_eLoadedGangFeatures[theId[client]][gfCost] * (g_eLoadedGangFeatures[theId[client]][gfIncrease] + g_eOwnedGangFeatures[client][oid][ogfLevel]);
+			float amount;
+			if (oid != -1)
+				amount = g_eLoadedGangFeatures[theId[client]][gfExponential] ? g_eLoadedGangFeatures[theId[client]][gfCost] * g_eLoadedGangFeatures[theId[client]][gfIncrease] * g_eOwnedGangFeatures[client][oid][ogfLevel]:g_eLoadedGangFeatures[theId[client]][gfCost] * (g_eLoadedGangFeatures[theId[client]][gfIncrease] + g_eOwnedGangFeatures[client][oid][ogfLevel]);
+			else
+				amount = float(g_eLoadedGangFeatures[theId[client]][gfCost]);
 			if (tConomy_getCurrency(client) >= amount) {
 				char reason[256];
 				Format(reason, sizeof(reason), "Bought %s (Level %i)", overTakeFeature[client], overtakeLevel[client]);
+				PrintToChat(client, reason);
 				int amountI = RoundToNearest(amount);
 				tConomy_removeCurrency(client, amountI, reason);
 				addFeature(client, theId[client], true);
 			} else
-				PrintToChat(client, "Not Enough Currency");
+				PrintToChat(client, "Not Enough Chips");
 		}
 		case MenuAction_Cancel:
 		{
@@ -1339,6 +1352,7 @@ public int findLoadedIdByName(char featureName[64]) {
 		return i;
 	return -1;
 }
+
 
 
 /*****************************************************************
@@ -2184,4 +2198,12 @@ bool IsValidClient(int client, bool bAllowBots = false, bool bAllowDead = true) 
 		return false;
 	}
 	return true;
+}
+
+public int getFeatureLevel(char featureName[64], int client) {
+	for (int i = 0; i < g_iOwnedFeatureCount[client]; i++) {
+		if (StrEqual(g_eOwnedGangFeatures[client][i][ogfFeatureName], featureName))
+			return g_eOwnedGangFeatures[client][i][ogfLevel];
+	}
+	return 0;
 }
