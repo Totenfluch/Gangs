@@ -339,7 +339,9 @@ public void OnConfigsExecuted() {
 public Action Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	int client = GetClientOfUserId(event.GetInt("userid"));
 	if (ga_bHasGang[client]) {
-		// TODO Player Spawn
+		CS_SetClientClanTag(client, ga_sGangName[client]);
+	} else {
+		CS_SetClientClanTag(client, "");
 	}
 	
 }
@@ -489,6 +491,17 @@ public void SQLCallback_CheckSQL_Player(Database db, DBResultSet results, const 
 				ga_bLoaded[client] = true;
 			}
 		}
+	}
+}
+
+
+public void OnClientSettingsChanged(int client) {
+	CreateTimer(0.2, ResetTag, client);
+}
+
+public Action ResetTag(Handle timer, any client) {
+	if (IsValidClient(client)) {
+		CS_SetClientClanTag(client, ga_sGangName[client]);
 	}
 }
 
